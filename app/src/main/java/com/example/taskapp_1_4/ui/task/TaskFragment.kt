@@ -27,7 +27,7 @@ class TaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener{
             val data=Task(title=binding.etTitle.text.toString(),desc=binding.etDesc.text.toString())
-           setFragmentResult(TASK_REQUEST, bundleOf("task_key" to data))
+           setFragmentResult(TASK_REQUEST, bundleOf(TASK_KEY to data))
 
             findNavController().navigateUp()
         }
