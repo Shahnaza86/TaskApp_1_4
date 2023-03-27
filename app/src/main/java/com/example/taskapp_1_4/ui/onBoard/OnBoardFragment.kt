@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.taskapp_1_4.R
+import com.example.taskapp_1_4.data.local.Pref
 import com.example.taskapp_1_4.databinding.FragmentOnBoardBinding
 import com.example.taskapp_1_4.ui.onBoard.adapter.OnBoardingAdapter
 import me.relex.circleindicator.CircleIndicator3
 
 class OnBoardFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardBinding
-private val adapter=OnBoardingAdapter(this::onStartClick,this:: onNextClick)
+    private val adapter=OnBoardingAdapter(this::onStartClick,this:: onNextClick)
+    private  lateinit var pref: Pref
     private fun setIndicator() {
         val indicator: CircleIndicator3 = binding.indicator
         val viewPager = binding.viewPager
@@ -31,9 +33,12 @@ private val adapter=OnBoardingAdapter(this::onStartClick,this:: onNextClick)
         super.onViewCreated(view, savedInstanceState)
         binding.viewPager.adapter=adapter
         setIndicator()
+        pref=Pref(requireContext())
     }
     private fun onStartClick(){
+        pref.saveSeen()
         findNavController().navigateUp()
+
     }
 
     private fun onNextClick(){
