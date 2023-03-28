@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.taskapp_1_4.R
 import com.example.taskapp_1_4.data.local.Pref
 import com.example.taskapp_1_4.databinding.FragmentOnBoardBinding
 import com.example.taskapp_1_4.ui.onBoard.adapter.OnBoardingAdapter
@@ -33,7 +32,7 @@ class OnBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.viewPager.adapter=adapter
         setIndicator()
-        pref=Pref(requireContext())
+        pref= Pref(requireContext())
     }
     private fun onStartClick(){
         pref.saveSeen()
