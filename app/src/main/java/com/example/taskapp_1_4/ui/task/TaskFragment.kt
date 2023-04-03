@@ -34,39 +34,14 @@ class TaskFragment : Fragment() {
             } else binding.etTitle.error = "Это поле обязательно для заполнения "
 
         }
-        }
-//        if (task == null) {
-//            binding.btnSave.text = getString(R.string.save)
-//        } else {
-//            binding.etTitle.setText(task?.title.toString())
-//            binding.etDesc.setText(task?.desc.toString())
-//            binding.btnSave.text = "UPDATE"
-//        }
-//        binding.btnSave.setOnClickListener {
-//            if (task == null) {
-//                save()
-//
-//            } else {
-//                update()
-//
-//            }
-//        }
-//    }
+    }
 
     private fun save() {
         val data =
             Task(title = binding.etTitle.text.toString(), desc = binding.etDesc.text.toString())
-        //     setFragmentResult(TASK_REQUEST, bundleOf(TASK_KEY to data))
         App.db.taskDao().insert(data)
         findNavController().navigateUp()
     }
-//    private fun update() {
-//        task?.title = binding.etTitle.text.toString()
-//        task?.desc = binding.etDesc.text.toString()
-//        task?.let { App.db.taskDao().update(it) }
-//        findNavController().navigateUp()
-//    }
-
 
 
     companion object {

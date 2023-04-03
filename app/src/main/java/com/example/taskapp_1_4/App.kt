@@ -4,17 +4,19 @@ import android.app.Application
 import androidx.room.Room
 import com.example.taskapp_1_4.data.local.db.AppDatabase
 
-class App:Application() {
+class App : Application() {
 
 
     override fun onCreate() {
         super.onCreate()
-        db= Room.databaseBuilder(
+        db = Room.databaseBuilder(
             applicationContext,
-            AppDatabase::class.java, "database-name").allowMainThreadQueries().build()
+            AppDatabase::class.java, "database-name"
+        ).allowMainThreadQueries().build()
     }
-    companion object{
-     lateinit   var db:AppDatabase
+
+    companion object {
+        lateinit var db: AppDatabase
     }
 }
 

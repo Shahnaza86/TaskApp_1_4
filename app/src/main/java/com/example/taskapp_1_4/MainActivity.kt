@@ -16,22 +16,18 @@ import com.example.taskapp_1_4.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private  lateinit var pref: Pref
+    private lateinit var pref: Pref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        pref= Pref(this)
+        pref = Pref(this)
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
         if (!pref.isUserSeen())
 
-        navController.navigate(R.id.onBoardFragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+            navController.navigate(R.id.onBoardFragment)
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
@@ -42,8 +38,6 @@ class MainActivity : AppCompatActivity() {
 
             )
         )
-
-
         val bottomNavFragments = setOf(
             R.id.navigation_home,
             R.id.navigation_dashboard,
@@ -54,9 +48,11 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             navView.isVisible = bottomNavFragments.contains(destination.id)
-            if (destination.id==R.id.onBoardFragment){
+            if (destination.id == R.id.onBoardFragment) {
                 supportActionBar?.hide()
-        }else
-     supportActionBar?.show()
+            } else
+                supportActionBar?.show()
 
-    }}}
+        }
+    }
+}
