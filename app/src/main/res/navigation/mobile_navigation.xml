@@ -37,4 +37,13 @@
         android:name="com.example.taskapp_1_4.ui.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.taskapp_1_4.ui.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+    <fragment
+        android:id="@+id/phoneNumberAuthFragment2"
+        android:name="com.example.taskapp_1_4.ui.auth.PhoneNumberAuthFragment"
+        android:label="PhoneNumberAuthFragment" />
 </navigation>

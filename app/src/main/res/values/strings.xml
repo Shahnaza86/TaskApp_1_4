@@ -1,13 +1,23 @@
 <resources>
-    <string name="app_name">TaskApp_1_4</string>
+    <string name="app_name">TaskManager</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
     <string name="description">Description</string>
     <string name="title">Title</string>
-    <string name="save">Save</string>
-    <string name="type_title">Title</string>
-    <string name="type_description" />
+    <string name="profile">Profile</string>
+    <string name="get_started">Get started</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="next2">Next</string>
+    <string name="google">Google</string>
+    <string name="phoneNumber">Phone number</string>
+    <string name="phoneNum">Номер телефон</string>
+    <string name="enterYourNumber">Введите свой номер телефона</string>
+    <string name="ok">Ok</string>
+    <string name="code">Введите код</string>
+    <string name="default_web_client_id" />
 </resources>
