@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
-import com.example.taskapp_1_4.R
-import com.example.taskapp_1_4.databinding.FragmentPhoneNumberAuthBinding
+import com.example.taskmanager.databinding.FragmentPhoneNumberAuthBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -38,17 +37,17 @@ class PhoneNumberAuthFragment : Fragment() {
         binding.apply {
             //showAutoKeyboard(requireContext(), etPhoneNumber)
             btnOk.setOnClickListener {
-                if (etPhoneNumber.text.isNotEmpty()) {
+                if (etPhoneNumber.text?.isNotEmpty()==true) {
                     sendVerificationCode(etPhoneNumber.text.toString())
                 } else {
                     etPhoneNumber.error = "Поле для номера телефона пусто!!!"
                 }
             }
             btnVerify.setOnClickListener {
-                if (etCode.text.isNotEmpty()) {
+                if (etCode.text?.isNotEmpty()==true) {
                     verifyCode(etCode.text.toString())
                 } else {
-                    etCode.error = "Поле для номера телефона пусто!!!"
+                    etCode.error = "Поле для кода телефона пусто!!!"
                 }
             }
         }

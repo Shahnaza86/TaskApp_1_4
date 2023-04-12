@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
-import com.example.taskapp_1_4.R
-import com.example.taskapp_1_4.databinding.FragmentAuthBinding
+import com.example.taskmanager.R
+import com.example.taskmanager.databinding.FragmentAuthBinding
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient

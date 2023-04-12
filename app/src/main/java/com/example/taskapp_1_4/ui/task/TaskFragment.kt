@@ -10,13 +10,12 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.example.taskapp_1_4.App
-import com.example.taskapp_1_4.R
-import com.example.taskapp_1_4.databinding.FragmentTaskBinding
 import com.example.taskapp_1_4.model.Task
+import com.example.taskmanager.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {
     private lateinit var binding: FragmentTaskBinding
-    private var task: Task? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +28,7 @@ class TaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener {
-            if (binding.etTitle.text.isNotEmpty()) {
+            if (binding.etTitle.text?.isNotEmpty()==true) {
                 save()
             } else binding.etTitle.error = "Это поле обязательно для заполнения "
 
